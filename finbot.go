@@ -3,11 +3,12 @@ package main
 import (
     "log"
     "github.com/go-telegram-bot-api/telegram-bot-api/v5"
+    "GriBotFinLeverage/internal"
 )
 
 func main() {
-    // Замените "YOUR_API_KEY" на ваш токен API
-    bot, err := tgbotapi.NewBotAPI("7885083217:AAFaNwWqXQJX20BsFtMq7TkTcax-RY_KTJ8")
+    botToken := internal.BotToken // Получаем токен из config.go
+    bot, err := tgbotapi.NewBotAPI(botToken) // Используем botToken вместо telegramBotToken
     if err != nil {
         log.Fatal(err)
     }
